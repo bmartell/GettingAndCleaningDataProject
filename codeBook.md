@@ -15,3 +15,7 @@ You can also embed plots, for example:
 plot(cars)
 ```
 
+```{r}
+table(cars)
+```
+
