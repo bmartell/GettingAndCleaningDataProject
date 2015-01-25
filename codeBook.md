@@ -99,6 +99,12 @@ values resulting from the application fo mean() and std() functions!
 ANSWER TO POINT 3:
 df_mean_std_action_labels: JOIN with activity_lables in order to add activities description to dataset
 
+ANSWER TO POINT 4:
+already done in point 1
+
+ANSWER TO POINT 5:
+
+
 
 
 

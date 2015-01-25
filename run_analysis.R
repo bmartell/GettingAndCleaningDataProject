@@ -218,6 +218,7 @@ colnames(activity_labels)<-c("id","action")
 df_mean_std_action_labels = merge(df_mean_std,activity_labels,by.x="activities",by.y="id",all=TRUE)
 
 #point 4
+#already done in part 1
 
 #point 5
 write.table(df_mean_std_action_labels,file = "tidyDataSet.txt",row.names = FALSE)
