@@ -185,8 +185,10 @@ global_set<-cbind(activities,subject,data_set,body_gyro_x,body_gyro_y, body_gyro
 ############################################################################################################################################################
 
 #create a vector containing col names wich will be part of our solution
-col_names<-c(1:79)
-j=0
+col_names<-c(1:81)
+col_names[1]<-"activities"
+col_names[2]<-"subjects"
+j=2
 for(i in 1:561) 
 {
   if(grepl("mean()",features$V2[i]) | grepl("std()",features$V2[i])) 
@@ -198,8 +200,10 @@ for(i in 1:561)
 }
 
 #creating mean_std (the data.table containing the solution to point 2)
-mean_std<-global_set[,col_names[1]]
-for(i in 2:79) 
+mean_std<-cbind(activities,subject)
+colnames(mean_std)<-c("activities","subjects")
+
+for(i in 3:81) 
 { 
   mean_std<-cbind(mean_std,global_set[,col_names[i]]) 
 }
@@ -210,8 +214,10 @@ colnames(df_mean_std)<-col_names
 
 ###################################################################
 #point 3
+colnames(activity_labels)<-c("id","action")
+df_mean_std_action_labels = merge(df_mean_std,activity_labels,by.x="activities",by.y="id",all=TRUE)
 
 #point 4
 
 #point 5
-write.table(subject,file = "tidyDataSet.txt",row.names = FALSE)
+write.table(df_mean_std_action_labels,file = "tidyDataSet.txt",row.names = FALSE)

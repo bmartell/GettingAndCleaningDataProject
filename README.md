@@ -20,3 +20,7 @@ the component of features vector containig the substrings "mean()" or "std()"
 Please note that the substrings "mean" and "std" would have given the wrong result
 because they could be part of parameters names, while what we want is only
 values resulting from the application fo mean() and std() functions!
+
+ANSWER TO POINT 3:
+df_mean_std_action_labels: JOIN with activity_lables in order to add activities description to dataset
+
