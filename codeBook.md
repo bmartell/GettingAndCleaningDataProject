@@ -20,26 +20,43 @@ y_test: data.table containing the x_test labels
 y_train: data.table containing the x_train labels
 
 subject_test: data.table containing the test subjects ids (2947 obs)
+
 subject_train: data.table containing the train subjects ids(7352 obs)
 
 body_acc_x_test: data.table containing the values for body acceleration on X for the  test subset
+
 body_acc_y_test: data.table containing the values for body acceleration on Y for the  test subset
+
 body_acc_z_test: data.table containing the values for body acceleration on Z for the  test subset
+
 body_gyro_x_test: data.table containing the values for gyroscope acceleration on X for the  test subset
+
 body_gyro_y_test: data.table containing the values for gyroscope acceleration on Y for the  test subset
+
 body_gyro_z_test: data.table containing the values for gyroscope acceleration on Z for the  test subset
+
 total_acc_x_test: data.table containing the values for total acceleration on X for the  test subset
+
 total_acc_y_testdata.table containing the values for total acceleration on Y for the  test subset
+
 total_acc_z_testdata.table containing the values for total acceleration on Z for the  test subset
 
 body_acc_x_train: data.table containing the values for body acceleration on X for the  train subset
+
 body_acc_y_train: data.table containing the values for body acceleration on Y for the  train subset
+
 body_acc_z_train: data.table containing the values for body acceleration on Z for the  train subset
+
 body_gyro_x_train: data.table containing the values for gyroscope acceleration on X for the  train subset
+
 body_gyro_y_train: data.table containing the values for gyroscope acceleration on Y for the  train subset
+
 body_gyro_z_train: data.table containing the values for gyroscope acceleration on Z for the  train subset
+
 total_acc_x_train: data.table containing the values for total acceleration on X for the  train subset
+
 total_acc_y_train: data.table containing the values for total acceleration on Y for the  train subset
+
 total_acc_z_train: data.table containing the values for total acceleration on Z for the  train subset
 
 
