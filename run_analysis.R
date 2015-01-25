@@ -60,7 +60,9 @@ total_acc_x_train<-read.table(files[23],header=FALSE)
 total_acc_y_train<-read.table(files[24],header=FALSE)
 total_acc_z_train<-read.table(files[25],header=FALSE)
 
+##############################################################################
 #point 1 - Merges the training and the test sets to create one data set.
+##############################################################################
 
 data_set<-rbind(x_train,x_test) #create a global dataset (training+test data sets) 10299 values
 colnames(data_set)<-features$V2
@@ -175,5 +177,41 @@ for(i in 1:128)
 colnames(body_gyro_z)<-body_gyro_z_labels
 
 
-
+#finally we can put all together in a single dataset!
 global_set<-cbind(activities,subject,data_set,body_gyro_x,body_gyro_y, body_gyro_z, body_acc_x,body_acc_y,body_acc_z, total_acc_x,total_acc_y,total_acc_z)
+
+############################################################################################################################################################
+#point 2 - Extracts only the measurements on the mean and standard deviation for each measurement
+############################################################################################################################################################
+
+#create a vector containing col names wich will be part of our solution
+col_names<-c(1:79)
+j=0
+for(i in 1:561) 
+{
+  if(grepl("mean()",features$V2[i]) | grepl("std()",features$V2[i])) 
+  { 
+    j=j+1
+    col_names[j]<-features$V2[i]
+    
+  } 
+}
+
+#creating mean_std (the data.table containing the solution to point 2)
+mean_std<-global_set[,col_names[1]]
+for(i in 2:79) 
+{ 
+  mean_std<-cbind(mean_std,global_set[,col_names[i]]) 
+}
+
+#here is the answer to point 2: a data.frame containing only mean and std measurements
+df_mean_std<-data.frame(mean_std)
+colnames(df_mean_std)<-col_names
+
+###################################################################
+#point 3
+
+#point 4
+
+#point 5
+write.table(subject,file = "tidyDataSet.txt",row.names = FALSE)
