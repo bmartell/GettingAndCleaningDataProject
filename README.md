@@ -28,4 +28,4 @@ ANSWER TO POINT 4:
 already done in point 1
 
 ANSWER TO POINT 5:
-
+mean_table: contains the mean for every activity and subject
