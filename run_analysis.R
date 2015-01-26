@@ -225,10 +225,10 @@ df_mean_std_action_labels = merge(df_mean_std,activity_labels,by.x="activities",
 library(plyr)
 col<-vector()
 mean_table<-activity_labels
-for(i in 3:82)
+for(i in 3:81)
 {
-  col<-ddply(df_mean_std_action_labels,.(action),summarize,sum=mean(df_mean_std_action_labels[,i]))
+  col<-ddply(df_mean_std_action_labels,.(subjects),summarize,sum=mean(df_mean_std_action_labels[,i]))
   mean_table<-cbind(mean_table,col)
 }
 
-write.table(mean_table,file = "tidyDataSet.txt",row.names = FALSE)
+write.table(mean_table,file = "tidyDataSet2.txt",row.names = FALSE)
